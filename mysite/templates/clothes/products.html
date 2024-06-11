@@ -1,0 +1,47 @@
+{% extends 'clothes/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block body %}
+<div class="row">
+    {% for item in itemlist %}
+    <div class="col-3">
+        <div class="offset-md-2 lg-4 row mt-5">
+            <img src="{{ item.item_image }}" class="card" height="300px" width="250px" >
+        </div>
+
+        <div class="row mt-5 ml-5">
+            <h3 style="font-size: 1.5rem;">{{ item.item_name }}</h3>
+            <h5 style="font-style: italic; font-size: 1rem;">{{ item.item_desc | truncatewords:10 }}</h5>
+            <h6>₹ {{ item.item_price }}</h6><br>
+            <h6 style="font-style: italic;">Added For:{{ item.for_user }}</h6>
+        </div>
+
+        <div class="row mt-5 ml-5 mb-5">
+            <a href="{% url 'clothes:detail' item.id %}" style="width: 100px; background: rgb(96,134,187); color: white;" class="btn">
+                Details
+            </a>
+
+            {% if user.is_authenticated and user.profile.user_type == 'cust' %}
+                <form action="{% url 'clothes:add_to_cart' item.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" style="width: 150px; background: rgb(96,134,187); color: white;" class="btn ml-2">Add to Cart</button>
+                  </form>
+            {% endif %}
+        </div>
+
+    </div>
+
+    {% endfor %}
+</div>
+
+  
+    {% endblock %}
+</body>
+</html>

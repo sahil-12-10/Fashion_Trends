@@ -1,0 +1,579 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b417897491.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<style>
+      /* FRONT IMAGE AND TEXT  */
+
+.container_1 {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.img {
+    position: absolute;
+    width: 100%; /* Half the width of the container */
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.navbar_1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    padding: 5px;
+    color: white;
+    z-index: 1; /* Ensure navbar is above the image */
+    width: 100%;
+    text-align: right;           
+}
+
+.navbar_1 ul{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar_1 ul li{
+    display: inline-block;  /*it will be in the line*/
+    list-style: none; /* no bullets will be shown*/
+    margin: 10px 20px;
+    position: relative;
+}
+
+.navbar_1 ul li a{
+    color: white;
+    text-decoration: none; /*this will remove the link line*/
+    font-size: 18px;
+}
+
+.logo{
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    left: -20px;
+    top: -70px;
+}
+
+              /*                                           SHOP BY CATEGORY                                                                               */
+.card-deck{
+      margin-top: 20px;
+      padding: 30px;
+}
+
+.card{  
+      border-radius: 15px;
+      overflow: hidden; 
+}
+
+.card-title{
+      text-align: center;
+      font-weight: 700;
+}
+
+.btn_1{
+      background-color: rgb(89,119,135); 
+      margin-left: 140px; 
+      margin-top: 20px;
+      color: white;
+}
+
+              /*                                           WHY CHOOSE US                                                                                  */
+.column {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      text-align: center;
+      margin: 0 10px;
+}
+
+.row{
+       padding: 50px;
+}
+/* styles.css */
+
+/* Center the heading and add margin-top */
+h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Add red color to the "Choose Us" span */
+h2 span {
+    color: red;
+}
+
+/* Add box shadow and styling to the columns */
+.column {
+    box-shadow: 10px 8px 5px #838888;
+}
+
+/* Style the paragraphs */
+p {
+    color: black;
+}
+
+
+              /* Dropdown styles */
+.dropdown {
+        display: inline-block;
+        position: relative;
+}
+
+.dropdown-content {
+        display: none;
+        position: absolute;
+        /* background-color: black; */
+        min-width: 160px;
+        z-index: 1;
+        margin-right: 40px;
+}
+
+.dropdown-content a {
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+}
+
+.dropdown-content a:hover {
+        background-color: rgb(98,139,189);
+}
+
+.dropdown:hover .dropdown-content {
+        display: block;
+}
+
+.dropbtn {
+        /* color: black; */
+        padding: 16px 20px;
+        font-size: 18px;
+        cursor: pointer;
+}
+
+ /*                                           FOOTER                                                                                  */
+#footer {
+  background-color: black;
+  padding: 0 0 30px 0;
+  color: #106eea;
+  font-size: 14px;
+  background: azure;
+}
+
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+  background: black;
+  color: #106eea;
+  
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h3 {
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer-top .footer-contact h3 span {
+  color: #106eea;
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #106eea;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: white;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
+  color: #106eea;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #106eea;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 4px;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: #3b8af2;
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer .copyright {
+  text-align: center;
+  float: left;
+}
+
+#footer .credits {
+  float: right;
+  text-align: center;
+  font-size: 13px;
+  color: #444444;
+}
+
+ /*                                           FEATURED PRODUCTS                                                                                  */
+
+.product-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    object-fit: cover;
+}
+
+.product-details {
+    padding: 20px;
+    height: 100%; /* Make sure the details container fills the entire card height */
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-info {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+             
+</style>
+</head>
+<body>
+  <!--                         FRONT IMAGE AND TEXT                                             -->
+  <div class="container_1">
+    <nav class="navbar_1">
+       <a href="{% url 'clothes:home' %}"><img src='{% static "clothes/logo.png" %}' alt="" srcset="" class="logo"></a> 
+        <ul>
+          {% if user.is_superuser %}
+            <li><a href="{% url 'clothes:add_item' %}">Add Item</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Categories ↓</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'clothes:products' %}">All Products</a>
+                    <a href="{% url 'clothes:categories' 1 %}">Shirts</a>
+                    <a href="{% url 'clothes:categories' 2 %}">T-Shirts</a>
+                    <a href="{% url 'clothes:categories' 3 %}">Trousers</a>
+                    <a href="{% url 'clothes:categories' 4 %}">Shoes</a>
+                </div>
+            </li>
+            <li><a href="{% url 'profile' %}">Profile <i class="fa-regular fa-user"></i></a></li>
+            <li><a href="{% url 'logout' %}">Logout <i class="fa-solid fa-right-to-bracket"></i></a></li>
+            <li><a class="btn navs" href="{% url 'clothes:view_cart' %}">Your Cart<i class="fa-solid fa-cart-plus"></i></a></li>
+            <li><a class="btn navs" href="{% url 'clothes:checkout' %}">Checkout<i class="fa-solid fa-cart-shopping"></i></a></li>
+
+          
+
+          {% elif user.is_authenticated %}
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Categories ↓</a>
+            <div class="dropdown-content">
+                <a href="{% url 'clothes:products' %}">All Products</a>
+                <a href="{% url 'clothes:categories' 1 %}">Shirts</a>
+                <a href="{% url 'clothes:categories' 2 %}">T-Shirts</a>
+                <a href="{% url 'clothes:categories' 3 %}">Trousers</a>
+                <a href="{% url 'clothes:categories' 4 %}">Shoes</a>
+            </div>
+        </li>
+
+            <li><a href="{% url 'profile' %}">Profile <i class="fa-regular fa-user"></i></a></li>
+            <li><a href="{% url 'logout' %}">Logout <i class="fa-solid fa-right-to-bracket"></i></a></li>
+            <li><a class="btn navs" href="{% url 'clothes:view_cart' %}">Your Cart<i class="fa-solid fa-cart-plus"></i></a></li>
+            <li><a class="btn navs" href="{% url 'clothes:checkout' %}">Checkout<i class="fa-solid fa-cart-shopping"></i></a></li>
+
+          {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up <i class="fa-solid fa-user-plus"></i></a></li>
+            <li><a href="{% url 'login' %}">Login <i class="fa-solid fa-right-to-bracket"></i></a></li>
+            
+          {% endif %}
+         
+        </ul>
+    </nav>
+    
+    <img src='{% static "clothes/fashion.jpg" %}' alt="Your Image" class="img">
+  </div>
+
+<h2 style="text-align: center; margin-top: 30px;"><strong>Shop By</strong> <span style="color: red;">Category</span></h2>
+
+<!--                                         CARD SECTION OF SHOP BY CATEGORY                 -->
+<!--                                 SHIRTS                                   -->
+<div class="card-deck">
+  <div class="card">
+    <img src="https://img.freepik.com/free-photo/close-up-flannel-shirt-detail_23-2149575383.jpg?w=1060&t=st=1706629291~exp=1706629891~hmac=97bbcb44d7233a231dbde00312f95dfdc02e5e4497014f93c9d0286044dc6403" width="100%" height="100%">
+    <div class="card-body">
+      <h3 class="card-title">Shirts
+          <h5>Discover a world of intelligent devices that seamlessly integrate into your daily life. From smart home solutions to wearable tech, we have curated the finest selection to enhance your lifestyle.</h5>
+      </h3>
+      <a href="{% url 'clothes:categories' 1 %}" class="btn btn_1">Shop Now</a>
+    </div>
+  </div>
+<!--                                         T-Shirts                    -->
+  <div class="card">
+    <img src="https://img.freepik.com/free-photo/many-folded-white-basic-cotton-t-shirts-presented-rustic-interior_346278-1675.jpg?size=626&ext=jpg&ga=GA1.1.650452352.1706531289&semt=ais" width="100%" height="100%">
+    <div class="card-body">
+      <h3 class="card-title">T-Shirts
+          <h5>Stay ahead of the curve with our collection of trendsetting gadgets. Whether you're a tech aficionado or seeking the perfect gift, our gadgets are designed to captivate and impress.</h5>
+      </h3>
+      <a href="{% url 'clothes:categories' 2 %}" class="btn btn_1" style=" background-color: rgb(147,91,51);">Shop Now</a>
+
+    </div>
+  </div>
+<!--                                         Trousers & Pants                    -->
+  <div class="card">
+    <img src="https://img.freepik.com/free-photo/assortment-beige-tone-colored-pants_23-2150773368.jpg?size=626&ext=jpg&ga=GA1.1.650452352.1706531289&semt=ais" width="100%" height="100%">
+    <div class="card-body">
+      <h3 class="card-title">Trousers & Pants
+          <h5>Immerse yourself in a world of unparalleled audio and visual experiences. Explore our range of high-quality headphones, speakers, and home theater systems that deliver crystal-clear sound.</h5>
+      </h3>
+      <a href="{% url 'clothes:categories' 3 %}" class="btn btn_1" style="background-color: rgb(166,157,148); color: white;">Shop Now</a>
+
+    </div>
+  </div>
+</div>
+
+<!--                                         Featured Products                    -->
+<div class="container-fluid">
+  <h2 class="text-center mt-5"><strong>Featured</strong> <span class="text-danger">Product</span></h2>
+  <div class="row row-cols-5 mt-5 justify-content-center">
+      {% for item in productlist %}
+      <div class="col mb-4">
+          <div class="product-card">
+              <img src="{{ item.item_image }}" class="card-img-top" alt="Product Image">
+              <div class="product-details">
+                  <h5 class="product-title">{{ item.item_name }}</h5>
+                  <p class="product-description">{{ item.item_desc | truncatewords:10 }}</p>
+                  <p class="product-price">₹{{ item.item_price }}</p>
+                  <p class="product-info"><small>Added For: {{ item.for_user }}</small></p>
+                  <a href="{% url 'clothes:detail' item.id %}" class="btn btn-primary">Details</a>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+
+
+<!--                                            WHY CHOOSE US                  -->
+
+<h2 style="text-align: center; margin-top: 30px;"><strong>Why</strong> <span style="color: red;">Choose Us</span></h2>
+<div class="row">
+    <div class="column" style="box-shadow: 10px 8px 5px #838888;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZFAWZECUBEq7IJs2H0_AvHdYH8Du8XAd9TCIYhEJJ6cg8RAQ8G2ECBJumwnN2hCwQ2js&usqp=CAU" alt="" srcset="" height="50%">
+        <h2>Quality Assurance</h2>
+        <p style="color: black;">Discover a curated collection of the latest and most unique fashion trends. Our team of experts selects each piece to ensure you stand out with unparalleled style.</p>
+    </div>
+
+    <div class="column" style="box-shadow: 10px 8px 5px #838888;">
+        <img src="data:image/jpeg;base64,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" alt="" srcset="" height="50%">
+        <h2>Classic Comfort</h2>
+        <p style="color: black;">Experience the luxury of high-quality fabrics that not only look good but also feel great against your skin. Our commitment to quality ensures that every garment meets the highest standards.</p>
+    </div>
+
+    <div class="column" style="box-shadow: 10px 8px 5px #838888;">
+        <img src="data:image/png;base64,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" alt="" srcset="" height="50%">
+        <h2>Customer-Centric Experience</h2>
+        <p style="color: black;">At Fashion Trends, your satisfaction is our priority. Enjoy a seamless shopping experience with user-friendly navigation, secure transactions, and personalized customer service.</p>
+    </div>
+</div>
+
+
+<!--                                           OUR SERVICES                         -->
+<h2 style="text-align: center; margin-top: 25px;"><strong>Our</strong> <span style="color: red;">Services</span></h2>
+<div class="row">
+    <div class="column" style="box-shadow: 10px 8px 5px #838888;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJ4AAACUCAMAAABVwGAvAAAAY1BMVEX///8AAAC/v7+tra2hoaH5+fnv7+96enoaGhrl5eWEhIScnJzo6OiwsLDLy8sVFRVaWlo5OTne3t5ISEjS0tIvLy9fX18lJSXY2NhlZWVQUFA/Pz9ubm64uLggICCRkZELCwv/JUBxAAAEYUlEQVR4nO2b25aqMAxAASmMyl0uosD4/195pikqYIsFYzkP2U8zLo1bLGmaVssiCIIgCIIgCIIgCIIgCIIwBGMeDozhywWhnxQ/GBSJH2bIdrurjUmxw5TzfFQ5TrnH06vR7Wz7gmZ3gHjdqfExaC4VxDsg2eUdfBsR1g3HzgkP+JPjhIOLV3s4wQAxlhucWMVfqGuAEmsU00YJdeaRflFCPfnlQc8YkRweCWmcPIh40BYjkssjIWYpYM+DuhiRvqIX8KBVKuFaR/+Jngp/SZYwr7doRtlAz/b1p4Dv6aVl8oqY8fQT2ff0pHcuE9XRUTfS9/TkCh7MyNpJ0bSe5aXgp5lfjOmxHusMpflNr+I3o8fC5nF3lFAw2CetMsSI3rmQpJdUJ72Y0MvS1enPhN5hfXo2oMfgq72ehqSa6dmAHpRXh0kXQiwP3y6IDehlsizIrlrpeSu9/m7u3pT8m+lZ+5g/Xs0vJLbTs1r4eq+z1emGer1fMue3pZ54c7ueSX+b6vXV30z621TPst75bazHLuAX/qd6ViCqZ+c/1bMCWB11iup5cz0rF35yBwN68F8Zqcihn6Wonk0UVCf+7y1W0d3Ut6+JcnRnayGzMKHHGi09WXFlZqV2qDT0ZG0FQ+vcrA3ncGf1cDvf810C9QuUeqGDy26pnrLb62qN2jWQHulp6Lk7XI64epgbfhwPV89kd1QK6Q0wp5dFTpQvnfTe6GW540Sj91yn57mXoovjKq3bRXv5s3phXVR/NWhxcZ935Bo95t6eWSxdsj07o9cOGrmxe//QK/S8cRF5W3C2Qq03OTJz351crhe8dNMb7fSo0vPKacwiWKfXby7Z9bENf/u/ta+fSq+/dskxbN3+cE/prdIT3fR6D6ODRaLXoFrLa+r1DTNxZIbtxYf+XaMHzx+8gxiI863Cd3oB3BXNMweIBW6wQg8u3vCkjAeLVWWrRkcPaujRaru5X76FenveN09H1yr6sec7he/0oBnVjVrJHl/A8TM+yrUGjIeXnJbH9suynQ+VSk/Pk70b4zHr8WOH3jjnL5BtckB/Jm4OY7hKPGkawXX2DzrAHZrIHpwoODzxlwexDJbtIbBkmoruVJOnR6onLmGyTXAeLM9T6X0HY0pGMdkQRtGbfOThTqpiA8vp5JGmHcEWQ28yyp/X5qY803RWnB2dZBGUE6aTiefRu5o/u8TGiA3icnSb7vlDJ4+tBjJnOiodYeCnmbX05CWDuXs0h0GK/+ig32sEGC/lilDwwvg8eaD76KCfaCIPPrM4tqo7kY+A+bG6Dz92lI2cpYjRu7t/lSHYrTtCDPPG37TLywuvFQVL9eF62BPV98X5i8McUe2+2TBV8sgjj4p+baQnUfcSdNVXy3npviw7tyjFmcb84ARndBoGSlB+R3AezaGnjz5xcHz8EiEJkU6Fs93lIXf8tGnM8qNf176bIf5GhGUuxMy/8LsTgiAIgiAIgiAIgiAIgiCIef4B7+FGuh7CC+EAAAAASUVORK5CYII=" alt="" srcset="">
+        <h2 style="margin-top: 50px;">World-Wide Delivery</h2>
+        <p style="color: black;">Enjoy the convenience of global accessibility with our worldwide delivery service, ensuring your favorite fashion finds reach you wherever you are.</p>
+    </div>
+
+    <div class="column" style="box-shadow: 10px 8px 5px #838888;">
+        <img src="data:image/png;base64,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" alt="" srcset="">
+        <h2 style="margin-top: 8px;">Secure Payments</h2>
+        <p style="color: black;">Experience peace of mind while shopping with our secure payment methods, employing encryption and industry-standard security measures to safeguard your financial transactions.</p>
+    </div>
+
+    <div class="column" style="box-shadow: 10px 8px 5px #838888;">
+        <img src="data:image/png;base64,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" alt="" srcset="">
+        <h2 style="margin-top: 50px;">Easy Return Policy</h2>
+        <p style="color: black;">Shop worry-free with our hassle-free and transparent return policy, providing you the flexibility and ease to return or exchange items, ensuring your satisfaction is our priority.</p>
+    </div>
+</div>
+
+
+
+  <!-- ======= Footer ======= -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+  
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-lg-3 col-md-6 footer-contact">
+              <h3>Fashion Trends<span>.</span></h3>
+              <p>
+                A108 Adam Street <br>
+                New York, NY 535022<br>
+                United States <br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Products</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">All Products</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Shirts</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">T-Shirts</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Trousers & Pants</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Social Networks</h4>
+              <p style="color: white;">Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Fashion Trends</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a href="https://bootstrapmade.com/">Fashion Trends</a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+  
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+</body>
+</html>
